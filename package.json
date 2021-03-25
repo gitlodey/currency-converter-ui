@@ -1,0 +1,17 @@
+{
+  "name": "currency-converter-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run-example": "node -r esm converter/example.js"
+  },
+  "author": "gitlodey",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node-fetch": "^2.6.1"
+  }
+}
