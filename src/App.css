@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: #f0f0f0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.shopping-cart td{
+  border: 1px solid #000;
+}
+
+.shopping-cart-item:hover {
+  background: #fafafa;
+}
