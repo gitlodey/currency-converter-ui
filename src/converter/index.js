@@ -1,13 +1,5 @@
 import fetch from "node-fetch";
 
-export async function getCurrencies(api) {
-    return fetch(api)
-        .then(res => res.json())
-        .catch(() => {
-            return {};
-        });
-}
-
 export async function getCurrencyRates(api) {
     return fetch(api)
         .then(res => res.json())
