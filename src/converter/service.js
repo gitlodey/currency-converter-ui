@@ -33,8 +33,23 @@ export function CurrencyConverter() {
         return arrayOfPrices;
     }
 
+     function format(arrayOfPrices) {
+         return arrayOfPrices.map(price => {
+             if (isNaN(Number(price.value)) === false) {
+                 price.value = new Intl.NumberFormat(window.navigator.language, {
+                     style: 'currency',
+                     currency: price.name,
+                     maximumSignificantDigits: 3
+                 }).format(price.value);
+             }
+
+             return price;
+         })
+     }
+
     return {
         updateRates,
         convert,
+        format,
     }
 }
