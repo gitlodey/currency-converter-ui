@@ -3,7 +3,9 @@ import { useAsync } from "react-async"
 
 export function ShoppingCartItem({price, currencyConverter}) {
 
-    const { data, error, isPending } = useAsync(currencyConverter.convert, {price})
+    const { data = [], error, isPending } = useAsync(currencyConverter.convert, {price});
+
+    const formattedPrices = currencyConverter.format(data);
 
     if (isPending) return <tr><td colSpan={3}>"Loading..."</td></tr>
     if (error) return <tr><td colSpan={3}>`Something went wrong: ${error.message}`</td></tr>
@@ -15,7 +17,7 @@ export function ShoppingCartItem({price, currencyConverter}) {
                 </td>
                 <td>
                     <p>prices in another available currencies is:</p>
-                    {data.map(price => <Price key={price.name} name={price.name} value={price.value}/>)}
+                    {formattedPrices.map(price => <Price key={price.name} name={price.name} value={price.value}/>)}
                 </td>
             </tr>
         )
